@@ -1,5 +1,5 @@
 # Webpack-knowledge
-easy Webpack knowledge
+一些简单的Webpack知识点
 
 | 文件夹名 | 描述 |
 | - | - |
