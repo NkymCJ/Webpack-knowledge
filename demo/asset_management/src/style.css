@@ -1,0 +1,13 @@
+.hello {
+    font-family: 'bt';
+    color: deepskyblue;
+    height: 42px;
+    line-height: 42px;
+    background: url('./icon.png') no-repeat center center;
+}
+@font-face{
+    font-family: 'bt';
+    src : url('./bt.woff2') format('woff2'),url('./bt.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}

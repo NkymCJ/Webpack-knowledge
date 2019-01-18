@@ -75,3 +75,6 @@
         ]
     }
     ```
+    
+5. 示例
+详见demo\asset_management
