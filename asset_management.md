@@ -33,7 +33,7 @@
 
 4. 在 webpack.config.js 配置文件中 的 module 配置
 
-    *webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader，进行相应的处理*
+    webpack 根据正则表达式，来确定应该查找哪些文件，并将其提供给指定的 loader，进行相应的处理
 
     ```
     module: {
@@ -75,6 +75,6 @@
         ]
     }
     ```
-    
+
 5. 示例
 详见demo\asset_management
