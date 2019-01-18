@@ -1,3 +1,4 @@
+# 起步
 
 ## 在网页中会引用哪些常见的静态资源
 + JS
@@ -41,8 +42,10 @@
 
 ## 安装方式
 1. 运行 npm i webpack -g 全局安装webpack。运行 npm i webpack-cli -g 全局安装webpack-cli
+2. 局部安装 去掉 -g
 
 ## 起步
+
 ```
 
 1. npm init -y
@@ -62,7 +65,7 @@
         "private": true //因为案例是私有，所以加上，控制台就不会报 warn:no repository field
     }
 
-2. 安装 webpack 和 webpack-cli:
+2. 安装 webpack 和 webpack-cli:(局部安装方式)
     npm install webpack webpack-cli -D
     或 npm install webpack webpack-cli --save-dev
     
@@ -77,16 +80,17 @@
 4. 打包
     1. webpack .\src\main.js -o .\dist\bundle.js
         
-        *在windows 系统中，路径需为 \*
+        这是新版的打包命令，旧版没有 -o
 
+        在windows 系统中，路径需为 \
 
     2. npx webpack 
 
-        *没有配置文件 webpack.config.js 时，默认输出成 main.js 文件*
+        没有配置文件 webpack.config.js 时，默认输出成 main.js 文件
 
     3. npx webpack --config webpack.config.js
 
-        *当有配置文件 webpack.config.js 时，可以省略 --config webpack.config.js，此处是为了表明可以使用任何的配置文件*
+        当有配置文件 webpack.config.js 时，可以省略 --config webpack.config.js，此处是为了表明可以使用任何的配置文件
 
         文件内容
         const path = require('path');
