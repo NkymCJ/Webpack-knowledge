@@ -95,6 +95,7 @@
         文件内容
         const path = require('path');
         module.exports = {
+            mode: 'development', // 开发模式
             entry: './src/index.js',
             output: {
                 filename: 'bundle.js', // 输出文件名为 bundle.js

@@ -6,3 +6,4 @@
 | demo | 示例 |
 | start | 起步 |
 | asset_management | 管理资源 |
+| output_management | 管理输出 |

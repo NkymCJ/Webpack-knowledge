@@ -17,6 +17,7 @@
             new HtmlWebpackPlugin()
         ]
         ```
+    + 所有 bundle 会自动加入到新建的 html 中 
 
     + 缺点:
 
