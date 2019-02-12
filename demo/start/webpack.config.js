@@ -1,6 +1,6 @@
 const path = require('path');
 module.exports = {
-    mode: 'development', // 开发模式
+    mode: "none", // 不使用任何模式，正常配置
     entry: './src/index.js',
     output: {
         filename: 'bundle.js',

@@ -77,7 +77,19 @@
     import _ form 'lodash'
     // 或 const _ = require('lodash)
 
-4. 打包
+4. 目录配置
+
+    dist
+     - bundle.js
+     - index.html
+    src
+     - index.js
+    webpack.config.js
+    package.json
+    package-lock.json
+    node_modules
+
+5. 打包
     1. webpack .\src\main.js -o .\dist\bundle.js
         
         这是新版的打包命令，旧版没有 -o
@@ -105,7 +117,7 @@
 
     4. NPM 脚本，在有 webpack.config.js 配置文件的基础上，在 package.json 文件 的 scripts 下 增加 "build":"webpack"。用 npm run build 来替代 npx 命令。参数加法如上
     
-5. 示例
+6. 示例
 详见demo\start
 
 ```

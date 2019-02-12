@@ -1,8 +1,4 @@
-import _ from 'lodash'
-function component() {
-    var element = document.createElement('div');
-    // 使用 lodash
-    element.innerHTML = _.join(['Hello', 'webpack'], ' ');
-    return element;
-}
-document.body.appendChild(component());
+import $ from "jquery";
+$(function () {
+    console.log('Hello Webpack');
+});
