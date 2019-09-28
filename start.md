@@ -133,8 +133,63 @@ package.json
 
 然后脚本命令增加参数`--env.development`和`--env.production`区别不同环境。
 
+![.env](./images/.env.png)
+
 在`webpack.base.js`中，使用导出为一个函数的形式，接收`env`，再通过`env.development`或`env.production`是否为真值，通过`webpack-merge`(`npm i -D webpack-merge`)，去合并对应配置的配置文件`webpack.dev.js`或`webpack.prod.js`。
 
-7. 如果是开发环境，使用`webpack-dev-server`
+![导出一个函数](./images/导出一个函数.png)
+
+7. 如果是开发环境，使用`webpack-dev-server`起服务
 
 安装: `npm i webpack-dev-server -D`。
+
+基本配置如下:
+
+``` JS
+// 在webpack.dev.js配置文件中新增devServer
+devServer: {
+    port: 8081, // 端口号
+    compress: true, // gzip，提升返回页面的速度
+    contentBase: path.resolve(__dirname, '../dist') // webpack启动服务会在dist目录下
+}
+```
+
+此处要注意的是，通过`devServer`打包输出的文件(`bundle.js`)是存在于内存中的，即`/dist`文件夹下是没有这个文件的，但是`localhost:8081/bundle.js`是打的开的。
+
+此时，有个缺点，我们要在`dist`目录下新建`index.html`文件，且可能要修改引入脚本的路径，我们希望的是，`src`下也有`index.html`文件，然后打包的时候打包进去`dist`并且自动修改引入的脚本路径。
+
+8. 自动生成html文件并引入打包好的js(生成配置和开发配置都需要用到，所以在基本配置里面加)
+
+安装: `npm i html-webpack-plugin -D`。
+
+基本配置如下:
+
+``` JS
+// webpack.base.js配置文件
+...
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+...
+module.exports = (env) => {
+    let isDev = env.development;
+    const base = {
+        ...
+        plugins: [
+            new HtmlWebpackPlugin({
+                template: path.resolve(__dirname, '../public/index.html'),
+                filename: 'index.html',
+                minify: !isDev && {
+                    removeAttributeQuotes: true, // 去除属性的引号
+                    collapseWhitespace: true // 压缩在一行
+                }
+            })
+        ]
+    }
+    ...
+}
+```
+
+通过这样的配置，它会帮我们以`public/index.html`为模板，打包生成`dist/index.html`并自动引入打包好的js。
+
+
+
+

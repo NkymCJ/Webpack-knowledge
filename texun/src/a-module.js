@@ -1,1 +1,1 @@
-module.exports = "hello"
+module.exports = "a-module.js:hello"
