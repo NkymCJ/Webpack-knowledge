@@ -46,7 +46,7 @@
 
 这其中有两个核心:
 
-1. 模块转换器(loader)，用于把模块原内容按照需求转换成新内容，可以加载非JS模块;
+1. 模块转换器(loader)，用于把模块原内容按照需求转换成新内容，可以加载非JS模块，如CSS;
 
 2. 扩展插件，在Webpack构建流程中的特定时机注入扩展逻辑来改变构建结果或做想要做的事情。
 
@@ -139,7 +139,7 @@ package.json
 
 ![导出一个函数](./images/导出一个函数.png)
 
-7. 如果是开发环境，使用`webpack-dev-server`起服务
+7. 开发环境，使用`webpack-dev-server`起服务
 
 安装: `npm i webpack-dev-server -D`。
 
